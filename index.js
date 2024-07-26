@@ -1,4 +1,3 @@
-const { request } = require('express');
 const express = require('express');
 const categories = require('./routes/categories');
 const sale = require('./routes/sale');
@@ -21,7 +20,7 @@ app.use(cors({
 app.use(express.urlencoded());
 app.use('/categories', categories);
 app.use('/products', products);
-app.use('/sale', sale);
+app.use('/sales', sale);
 app.use('/order', order);
 
 
