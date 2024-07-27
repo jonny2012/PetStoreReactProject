@@ -28,7 +28,8 @@ router.get('/:id', async (req, res) => {
         res.json({ status: 'ERR', message: 'wrong id' });
         return
     }
-    const product = await Product.sequelize.query(`SELECT products.id as productId,
+    const product = await Product.sequelize.query(
+        `SELECT products.id as productId,
  products.title  as productTitle,
   products.price  as productPrice,
    products.discont_price  as productDiscont,
@@ -36,7 +37,7 @@ router.get('/:id', async (req, res) => {
     products.description  as productDescription,
     categories.id as categoryId,
     categories.title  as categoryTitle
-from products  INNER JOIN categories  ON categories.id=products.categoryId    where products.id=${id}`);
+from products  INNER JOIN categories  ON categories.id=products.categoryId  where products.id=${id}`);
 
     if (product.length === 0) {
         res.json({ status: 'ERR', message: 'product not found' });

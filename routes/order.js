@@ -11,7 +11,7 @@ router.get('/send', (req, res) =>{
 
 router.post('/send', (req, res) => {
     
-    res.json({status: 'OK', message: 'request processed'})
+    res.json({status: 'OK', message: 'request processed',})
 })
 
 
